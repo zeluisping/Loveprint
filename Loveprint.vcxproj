@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1D9B66BE-1643-4FB8-9C9E-8586BBDBEDC1}</ProjectGuid>
+    <RootNamespace>Loveprint</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)/love/src;$(ProjectDir)/love/src/modules;$(ProjectDir)/love/src/libraries/;$(ProjectDir)/libraries/freetype-2.5.3/include;$(ProjectDir)/libraries/physfs-2.0.3;$(ProjectDir)/libraries/libvorbis-1.3.4/include;$(ProjectDir)/libraries/libogg-1.3.2/include/;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;MODPLUG_BUILD</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)/love/src;$(ProjectDir)/love/src/modules;$(ProjectDir)/love/src/libraries/;$(ProjectDir)/libraries/freetype-2.5.3/include;$(ProjectDir)/libraries/physfs-2.0.3;$(ProjectDir)/libraries/libvorbis-1.3.4/include;$(ProjectDir)/libraries/libogg-1.3.2/include/;LOVE_NOMPG123</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;MODPLUG_BUILD</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="font\Font.cpp" />
+    <ClCompile Include="font\NullRasterizer.cpp" />
+    <ClCompile Include="graphics\Graphics.cpp" />
+    <ClCompile Include="jade\Control.cpp" />
+    <ClCompile Include="jade\JadeElement.cpp" />
+    <ClCompile Include="jade\Panel.cpp" />
+    <ClCompile Include="runtime\Type.cpp" />
+    <ClCompile Include="libraries\glm\detail\dummy.cpp" />
+    <ClCompile Include="libraries\glm\detail\glm.cpp" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lapi.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lauxlib.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lbaselib.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lbitlib.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lcode.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lcorolib.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lctype.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\ldblib.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\ldebug.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\ldo.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\ldump.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lfunc.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lgc.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\linit.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\liolib.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\llex.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lmathlib.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lmem.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\loadlib.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lobject.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lopcodes.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\loslib.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lparser.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lstate.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lstring.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lstrlib.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\ltable.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\ltablib.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\ltm.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lundump.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lvm.c" />
+    <ClCompile Include="libraries\lua-5.2.3\src\lzio.c" />
+    <ClCompile Include="libraries\opengl\opengl.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="jade\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="attributes.h" />
+    <ClInclude Include="font\Font.h" />
+    <ClInclude Include="font\Glyph.h" />
+    <ClInclude Include="font\NullRasterizer.h" />
+    <ClInclude Include="font\Rasterizer.h" />
+    <ClInclude Include="jade\JadeElement.h" />
+    <ClInclude Include="jade\Thickness.h" />
+    <ClInclude Include="jade\Panel.h" />
+    <ClInclude Include="runtime\Property.h" />
+    <ClInclude Include="types.h" />
+    <ClInclude Include="graphics\Color.h" />
+    <ClInclude Include="graphics\Graphics.h" />
+    <ClInclude Include="graphics\GraphicsState.h" />
+    <ClInclude Include="graphics\Viewport.h" />
+    <ClInclude Include="jade\Control.h" />
+    <ClInclude Include="runtime\Object.h" />
+    <ClInclude Include="libraries\devil32\include\IL\config.h" />
+    <ClInclude Include="libraries\devil32\include\IL\devil_internal_exports.h" />
+    <ClInclude Include="libraries\devil32\include\IL\il.h" />
+    <ClInclude Include="libraries\devil32\include\IL\ilu.h" />
+    <ClInclude Include="libraries\devil32\include\IL\ilut.h" />
+    <ClInclude Include="libraries\devil32\include\IL\ilut_config.h" />
+    <ClInclude Include="libraries\devil32\include\IL\ilu_region.h" />
+    <ClInclude Include="libraries\devil32\include\IL\il_wrap.h" />
+    <ClInclude Include="libraries\glm\common.hpp" />
+    <ClInclude Include="libraries\glm\detail\func_common.hpp" />
+    <ClInclude Include="libraries\glm\detail\func_exponential.hpp" />
+    <ClInclude Include="libraries\glm\detail\func_geometric.hpp" />
+    <ClInclude Include="libraries\glm\detail\func_integer.hpp" />
+    <ClInclude Include="libraries\glm\detail\func_matrix.hpp" />
+    <ClInclude Include="libraries\glm\detail\func_noise.hpp" />
+    <ClInclude Include="libraries\glm\detail\func_packing.hpp" />
+    <ClInclude Include="libraries\glm\detail\func_trigonometric.hpp" />
+    <ClInclude Include="libraries\glm\detail\func_vector_relational.hpp" />
+    <ClInclude Include="libraries\glm\detail\hint.hpp" />
+    <ClInclude Include="libraries\glm\detail\intrinsic_common.hpp" />
+    <ClInclude Include="libraries\glm\detail\intrinsic_exponential.hpp" />
+    <ClInclude Include="libraries\glm\detail\intrinsic_geometric.hpp" />
+    <ClInclude Include="libraries\glm\detail\intrinsic_integer.hpp" />
+    <ClInclude Include="libraries\glm\detail\intrinsic_matrix.hpp" />
+    <ClInclude Include="libraries\glm\detail\intrinsic_trigonometric.hpp" />
+    <ClInclude Include="libraries\glm\detail\intrinsic_vector_relational.hpp" />
+    <ClInclude Include="libraries\glm\detail\precision.hpp" />
+    <ClInclude Include="libraries\glm\detail\setup.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_float.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_gentype.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_half.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_int.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_mat.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_mat2x2.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_mat2x3.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_mat2x4.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_mat3x2.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_mat3x3.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_mat3x4.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_mat4x2.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_mat4x3.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_mat4x4.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_vec.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_vec1.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_vec2.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_vec3.hpp" />
+    <ClInclude Include="libraries\glm\detail\type_vec4.hpp" />
+    <ClInclude Include="libraries\glm\detail\_features.hpp" />
+    <ClInclude Include="libraries\glm\detail\_fixes.hpp" />
+    <ClInclude Include="libraries\glm\detail\_literals.hpp" />
+    <ClInclude Include="libraries\glm\detail\_noise.hpp" />
+    <ClInclude Include="libraries\glm\detail\_swizzle.hpp" />
+    <ClInclude Include="libraries\glm\detail\_swizzle_func.hpp" />
+    <ClInclude Include="libraries\glm\detail\_vectorize.hpp" />
+    <ClInclude Include="libraries\glm\exponential.hpp" />
+    <ClInclude Include="libraries\glm\ext.hpp" />
+    <ClInclude Include="libraries\glm\fwd.hpp" />
+    <ClInclude Include="libraries\glm\geometric.hpp" />
+    <ClInclude Include="libraries\glm\glm.hpp" />
+    <ClInclude Include="libraries\glm\gtc\constants.hpp" />
+    <ClInclude Include="libraries\glm\gtc\epsilon.hpp" />
+    <ClInclude Include="libraries\glm\gtc\matrix_access.hpp" />
+    <ClInclude Include="libraries\glm\gtc\matrix_integer.hpp" />
+    <ClInclude Include="libraries\glm\gtc\matrix_inverse.hpp" />
+    <ClInclude Include="libraries\glm\gtc\matrix_transform.hpp" />
+    <ClInclude Include="libraries\glm\gtc\noise.hpp" />
+    <ClInclude Include="libraries\glm\gtc\packing.hpp" />
+    <ClInclude Include="libraries\glm\gtc\quaternion.hpp" />
+    <ClInclude Include="libraries\glm\gtc\random.hpp" />
+    <ClInclude Include="libraries\glm\gtc\reciprocal.hpp" />
+    <ClInclude Include="libraries\glm\gtc\type_precision.hpp" />
+    <ClInclude Include="libraries\glm\gtc\type_ptr.hpp" />
+    <ClInclude Include="libraries\glm\gtc\ulp.hpp" />
+    <ClInclude Include="libraries\glm\gtx\associated_min_max.hpp" />
+    <ClInclude Include="libraries\glm\gtx\bit.hpp" />
+    <ClInclude Include="libraries\glm\gtx\closest_point.hpp" />
+    <ClInclude Include="libraries\glm\gtx\color_space.hpp" />
+    <ClInclude Include="libraries\glm\gtx\color_space_YCoCg.hpp" />
+    <ClInclude Include="libraries\glm\gtx\compatibility.hpp" />
+    <ClInclude Include="libraries\glm\gtx\component_wise.hpp" />
+    <ClInclude Include="libraries\glm\gtx\constants.hpp" />
+    <ClInclude Include="libraries\glm\gtx\dual_quaternion.hpp" />
+    <ClInclude Include="libraries\glm\gtx\epsilon.hpp" />
+    <ClInclude Include="libraries\glm\gtx\euler_angles.hpp" />
+    <ClInclude Include="libraries\glm\gtx\extend.hpp" />
+    <ClInclude Include="libraries\glm\gtx\extented_min_max.hpp" />
+    <ClInclude Include="libraries\glm\gtx\fast_exponential.hpp" />
+    <ClInclude Include="libraries\glm\gtx\fast_square_root.hpp" />
+    <ClInclude Include="libraries\glm\gtx\fast_trigonometry.hpp" />
+    <ClInclude Include="libraries\glm\gtx\gradient_paint.hpp" />
+    <ClInclude Include="libraries\glm\gtx\handed_coordinate_space.hpp" />
+    <ClInclude Include="libraries\glm\gtx\inertia.hpp" />
+    <ClInclude Include="libraries\glm\gtx\integer.hpp" />
+    <ClInclude Include="libraries\glm\gtx\intersect.hpp" />
+    <ClInclude Include="libraries\glm\gtx\int_10_10_10_2.hpp" />
+    <ClInclude Include="libraries\glm\gtx\io.hpp" />
+    <ClInclude Include="libraries\glm\gtx\log_base.hpp" />
+    <ClInclude Include="libraries\glm\gtx\matrix_cross_product.hpp" />
+    <ClInclude Include="libraries\glm\gtx\matrix_interpolation.hpp" />
+    <ClInclude Include="libraries\glm\gtx\matrix_major_storage.hpp" />
+    <ClInclude Include="libraries\glm\gtx\matrix_operation.hpp" />
+    <ClInclude Include="libraries\glm\gtx\matrix_query.hpp" />
+    <ClInclude Include="libraries\glm\gtx\matrix_transform_2d.hpp" />
+    <ClInclude Include="libraries\glm\gtx\mixed_product.hpp" />
+    <ClInclude Include="libraries\glm\gtx\multiple.hpp" />
+    <ClInclude Include="libraries\glm\gtx\noise.hpp" />
+    <ClInclude Include="libraries\glm\gtx\norm.hpp" />
+    <ClInclude Include="libraries\glm\gtx\normal.hpp" />
+    <ClInclude Include="libraries\glm\gtx\normalize_dot.hpp" />
+    <ClInclude Include="libraries\glm\gtx\number_precision.hpp" />
+    <ClInclude Include="libraries\glm\gtx\optimum_pow.hpp" />
+    <ClInclude Include="libraries\glm\gtx\orthonormalize.hpp" />
+    <ClInclude Include="libraries\glm\gtx\perpendicular.hpp" />
+    <ClInclude Include="libraries\glm\gtx\polar_coordinates.hpp" />
+    <ClInclude Include="libraries\glm\gtx\projection.hpp" />
+    <ClInclude Include="libraries\glm\gtx\quaternion.hpp" />
+    <ClInclude Include="libraries\glm\gtx\random.hpp" />
+    <ClInclude Include="libraries\glm\gtx\raw_data.hpp" />
+    <ClInclude Include="libraries\glm\gtx\reciprocal.hpp" />
+    <ClInclude Include="libraries\glm\gtx\rotate_normalized_axis.hpp" />
+    <ClInclude Include="libraries\glm\gtx\rotate_vector.hpp" />
+    <ClInclude Include="libraries\glm\gtx\scalar_relational.hpp" />
+    <ClInclude Include="libraries\glm\gtx\simd_mat4.hpp" />
+    <ClInclude Include="libraries\glm\gtx\simd_quat.hpp" />
+    <ClInclude Include="libraries\glm\gtx\simd_vec4.hpp" />
+    <ClInclude Include="libraries\glm\gtx\spline.hpp" />
+    <ClInclude Include="libraries\glm\gtx\std_based_type.hpp" />
+    <ClInclude Include="libraries\glm\gtx\string_cast.hpp" />
+    <ClInclude Include="libraries\glm\gtx\transform.hpp" />
+    <ClInclude Include="libraries\glm\gtx\transform2.hpp" />
+    <ClInclude Include="libraries\glm\gtx\ulp.hpp" />
+    <ClInclude Include="libraries\glm\gtx\unsigned_int.hpp" />
+    <ClInclude Include="libraries\glm\gtx\vec1.hpp" />
+    <ClInclude Include="libraries\glm\gtx\vector_angle.hpp" />
+    <ClInclude Include="libraries\glm\gtx\vector_query.hpp" />
+    <ClInclude Include="libraries\glm\gtx\wrap.hpp" />
+    <ClInclude Include="libraries\glm\integer.hpp" />
+    <ClInclude Include="libraries\glm\mat2x2.hpp" />
+    <ClInclude Include="libraries\glm\mat2x3.hpp" />
+    <ClInclude Include="libraries\glm\mat2x4.hpp" />
+    <ClInclude Include="libraries\glm\mat3x2.hpp" />
+    <ClInclude Include="libraries\glm\mat3x3.hpp" />
+    <ClInclude Include="libraries\glm\mat3x4.hpp" />
+    <ClInclude Include="libraries\glm\mat4x2.hpp" />
+    <ClInclude Include="libraries\glm\mat4x3.hpp" />
+    <ClInclude Include="libraries\glm\mat4x4.hpp" />
+    <ClInclude Include="libraries\glm\matrix.hpp" />
+    <ClInclude Include="libraries\glm\packing.hpp" />
+    <ClInclude Include="libraries\glm\trigonometric.hpp" />
+    <ClInclude Include="libraries\glm\vec2.hpp" />
+    <ClInclude Include="libraries\glm\vec3.hpp" />
+    <ClInclude Include="libraries\glm\vec4.hpp" />
+    <ClInclude Include="libraries\glm\vector_relational.hpp" />
+    <ClInclude Include="libraries\glm\virtrev\xstream.hpp" />
+    <ClInclude Include="libraries\libdevil.h" />
+    <ClInclude Include="libraries\libglm.h" />
+    <ClInclude Include="libraries\liblua.h" />
+    <ClInclude Include="libraries\libmodplug.h" />
+    <ClInclude Include="libraries\libopengl.h" />
+    <ClInclude Include="libraries\libsdl.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lapi.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lauxlib.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lcode.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lctype.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\ldebug.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\ldo.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lfunc.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lgc.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\llex.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\llimits.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lmem.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lobject.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lopcodes.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lparser.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lstate.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lstring.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\ltable.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\ltm.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lua.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lua.hpp" />
+    <ClInclude Include="libraries\lua-5.2.3\src\luaconf.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lualib.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lundump.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lvm.h" />
+    <ClInclude Include="libraries\lua-5.2.3\src\lzio.h" />
+    <ClInclude Include="libraries\opengl\defines.h" />
+    <ClInclude Include="libraries\opengl\functions.h" />
+    <ClInclude Include="libraries\opengl\opengl.h" />
+    <ClInclude Include="libraries\opengl\typedefs.h" />
+    <ClInclude Include="libraries\sdl2\include\begin_code.h" />
+    <ClInclude Include="libraries\sdl2\include\close_code.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_assert.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_atomic.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_audio.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_bits.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_blendmode.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_clipboard.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_config.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_cpuinfo.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_endian.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_error.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_events.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_filesystem.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_gamecontroller.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_gesture.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_haptic.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_hints.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_joystick.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_keyboard.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_keycode.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_loadso.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_log.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_main.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_messagebox.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_mouse.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_mutex.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_name.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_opengl.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_opengles.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_opengles2.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_pixels.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_platform.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_power.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_quit.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_rect.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_render.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_revision.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_rwops.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_scancode.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_shape.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_stdinc.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_surface.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_system.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_syswm.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test_assert.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test_common.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test_compare.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test_crc32.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test_font.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test_fuzzer.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test_harness.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test_images.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test_log.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test_md5.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_test_random.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_thread.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_timer.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_touch.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_types.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_version.h" />
+    <ClInclude Include="libraries\sdl2\include\SDL_video.h" />
+    <ClInclude Include="runtime\Type.h" />
+    <ClInclude Include="jade\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libraries\glm\detail\func_common.inl" />
+    <None Include="libraries\glm\detail\func_exponential.inl" />
+    <None Include="libraries\glm\detail\func_geometric.inl" />
+    <None Include="libraries\glm\detail\func_integer.inl" />
+    <None Include="libraries\glm\detail\func_matrix.inl" />
+    <None Include="libraries\glm\detail\func_noise.inl" />
+    <None Include="libraries\glm\detail\func_packing.inl" />
+    <None Include="libraries\glm\detail\func_trigonometric.inl" />
+    <None Include="libraries\glm\detail\func_vector_relational.inl" />
+    <None Include="libraries\glm\detail\intrinsic_common.inl" />
+    <None Include="libraries\glm\detail\intrinsic_exponential.inl" />
+    <None Include="libraries\glm\detail\intrinsic_geometric.inl" />
+    <None Include="libraries\glm\detail\intrinsic_integer.inl" />
+    <None Include="libraries\glm\detail\intrinsic_matrix.inl" />
+    <None Include="libraries\glm\detail\intrinsic_trigonometric.inl" />
+    <None Include="libraries\glm\detail\intrinsic_vector_relational.inl" />
+    <None Include="libraries\glm\detail\precision.inl" />
+    <None Include="libraries\glm\detail\type_gentype.inl" />
+    <None Include="libraries\glm\detail\type_half.inl" />
+    <None Include="libraries\glm\detail\type_mat.inl" />
+    <None Include="libraries\glm\detail\type_mat2x2.inl" />
+    <None Include="libraries\glm\detail\type_mat2x3.inl" />
+    <None Include="libraries\glm\detail\type_mat2x4.inl" />
+    <None Include="libraries\glm\detail\type_mat3x2.inl" />
+    <None Include="libraries\glm\detail\type_mat3x3.inl" />
+    <None Include="libraries\glm\detail\type_mat3x4.inl" />
+    <None Include="libraries\glm\detail\type_mat4x2.inl" />
+    <None Include="libraries\glm\detail\type_mat4x3.inl" />
+    <None Include="libraries\glm\detail\type_mat4x4.inl" />
+    <None Include="libraries\glm\detail\type_vec.inl" />
+    <None Include="libraries\glm\detail\type_vec1.inl" />
+    <None Include="libraries\glm\detail\type_vec2.inl" />
+    <None Include="libraries\glm\detail\type_vec3.inl" />
+    <None Include="libraries\glm\detail\type_vec4.inl" />
+    <None Include="libraries\glm\gtc\constants.inl" />
+    <None Include="libraries\glm\gtc\epsilon.inl" />
+    <None Include="libraries\glm\gtc\matrix_access.inl" />
+    <None Include="libraries\glm\gtc\matrix_inverse.inl" />
+    <None Include="libraries\glm\gtc\matrix_transform.inl" />
+    <None Include="libraries\glm\gtc\noise.inl" />
+    <None Include="libraries\glm\gtc\packing.inl" />
+    <None Include="libraries\glm\gtc\quaternion.inl" />
+    <None Include="libraries\glm\gtc\random.inl" />
+    <None Include="libraries\glm\gtc\reciprocal.inl" />
+    <None Include="libraries\glm\gtc\type_precision.inl" />
+    <None Include="libraries\glm\gtc\type_ptr.inl" />
+    <None Include="libraries\glm\gtc\ulp.inl" />
+    <None Include="libraries\glm\gtx\associated_min_max.inl" />
+    <None Include="libraries\glm\gtx\bit.inl" />
+    <None Include="libraries\glm\gtx\closest_point.inl" />
+    <None Include="libraries\glm\gtx\color_space.inl" />
+    <None Include="libraries\glm\gtx\color_space_YCoCg.inl" />
+    <None Include="libraries\glm\gtx\compatibility.inl" />
+    <None Include="libraries\glm\gtx\component_wise.inl" />
+    <None Include="libraries\glm\gtx\dual_quaternion.inl" />
+    <None Include="libraries\glm\gtx\euler_angles.inl" />
+    <None Include="libraries\glm\gtx\extend.inl" />
+    <None Include="libraries\glm\gtx\extented_min_max.inl" />
+    <None Include="libraries\glm\gtx\fast_exponential.inl" />
+    <None Include="libraries\glm\gtx\fast_square_root.inl" />
+    <None Include="libraries\glm\gtx\fast_trigonometry.inl" />
+    <None Include="libraries\glm\gtx\gradient_paint.inl" />
+    <None Include="libraries\glm\gtx\handed_coordinate_space.inl" />
+    <None Include="libraries\glm\gtx\inertia.inl" />
+    <None Include="libraries\glm\gtx\integer.inl" />
+    <None Include="libraries\glm\gtx\intersect.inl" />
+    <None Include="libraries\glm\gtx\int_10_10_10_2.inl" />
+    <None Include="libraries\glm\gtx\io.inl" />
+    <None Include="libraries\glm\gtx\log_base.inl" />
+    <None Include="libraries\glm\gtx\matrix_cross_product.inl" />
+    <None Include="libraries\glm\gtx\matrix_interpolation.inl" />
+    <None Include="libraries\glm\gtx\matrix_major_storage.inl" />
+    <None Include="libraries\glm\gtx\matrix_operation.inl" />
+    <None Include="libraries\glm\gtx\matrix_query.inl" />
+    <None Include="libraries\glm\gtx\matrix_transform_2d.inl" />
+    <None Include="libraries\glm\gtx\mixed_product.inl" />
+    <None Include="libraries\glm\gtx\multiple.inl" />
+    <None Include="libraries\glm\gtx\norm.inl" />
+    <None Include="libraries\glm\gtx\normal.inl" />
+    <None Include="libraries\glm\gtx\normalize_dot.inl" />
+    <None Include="libraries\glm\gtx\number_precision.inl" />
+    <None Include="libraries\glm\gtx\optimum_pow.inl" />
+    <None Include="libraries\glm\gtx\orthonormalize.inl" />
+    <None Include="libraries\glm\gtx\perpendicular.inl" />
+    <None Include="libraries\glm\gtx\polar_coordinates.inl" />
+    <None Include="libraries\glm\gtx\projection.inl" />
+    <None Include="libraries\glm\gtx\quaternion.inl" />
+    <None Include="libraries\glm\gtx\raw_data.inl" />
+    <None Include="libraries\glm\gtx\rotate_normalized_axis.inl" />
+    <None Include="libraries\glm\gtx\rotate_vector.inl" />
+    <None Include="libraries\glm\gtx\scalar_relational.inl" />
+    <None Include="libraries\glm\gtx\simd_mat4.inl" />
+    <None Include="libraries\glm\gtx\simd_quat.inl" />
+    <None Include="libraries\glm\gtx\simd_vec4.inl" />
+    <None Include="libraries\glm\gtx\spline.inl" />
+    <None Include="libraries\glm\gtx\std_based_type.inl" />
+    <None Include="libraries\glm\gtx\string_cast.inl" />
+    <None Include="libraries\glm\gtx\transform.inl" />
+    <None Include="libraries\glm\gtx\transform2.inl" />
+    <None Include="libraries\glm\gtx\unsigned_int.inl" />
+    <None Include="libraries\glm\gtx\vec1.inl" />
+    <None Include="libraries\glm\gtx\vector_angle.inl" />
+    <None Include="libraries\glm\gtx\vector_query.inl" />
+    <None Include="libraries\glm\gtx\wrap.inl" />
+    <None Include="libraries\lua-5.2.3\doc\contents.html" />
+    <None Include="libraries\lua-5.2.3\doc\manual.html" />
+    <None Include="libraries\lua-5.2.3\doc\readme.html" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
