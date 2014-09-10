@@ -1,8 +1,11 @@
 #ifndef LOVEPRINT_JADE_PANEL_H
 #define LOVEPRINT_JADE_PANEL_H
 
-#include "Control.h"
+// std
 #include <vector>
+
+// jade
+#include "Control.h"
 
 namespace loveprint
 {
@@ -11,14 +14,20 @@ namespace jade
 
 class Panel : public Control
 {
-	std::vector<Control> _children;
+	ObjectMeta(loveprint::jade::Panel, loveprint::jade::Control);
+
+	ObjectUserProperty(loveprint::jade::Panel, std::vector<loveprint::jade::Control *>, Children);
 
 public:
-	inline const std::vector<Control> & children() const {
-		return _children;
+	const std::vector<loveprint::jade::Control *> & getChildren() const
+	{
+		return propv_Children;
+	}
+	virtual std::vector<loveprint::jade::Control *> * getChildren() {
+		return &propv_Children;
 	}
 
-	Panel();
+	Panel(JadeElement * parent);
 	virtual ~Panel();
 }; // Panel
 

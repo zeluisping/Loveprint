@@ -6,6 +6,8 @@ namespace jade
 {
 
 ObjectPropertyBody(JadeElement, graphics::Color, Background);
+ObjectPropertyBody(JadeElement, int32, Width);
+ObjectPropertyBody(JadeElement, int32, Height);
 
 JadeElement::JadeElement()
 {

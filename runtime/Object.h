@@ -1,7 +1,10 @@
 #ifndef LOVEPRINT_RUNTIME_OBJECT_H
 #define LOVEPRINT_RUNTIME_OBJECT_H
 
+// runtime
 #include "Type.h"
+
+// loveprint
 #include "types.h"
 
 #define ObjectMeta(class, parent) \

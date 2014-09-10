@@ -1,16 +1,15 @@
 #ifndef LOVEPRINT_RUNTIME_TYPE_H
 #define LOVEPRINT_RUNTIME_TYPE_H
 
+// std
 #include <vector>
-
 
 namespace loveprint
 {
 namespace runtime
 {
 
-template<class owner, typename T>
-class Property;
+template<class owner, typename T> class Property;
 
 class Type final
 {

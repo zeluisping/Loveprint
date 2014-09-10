@@ -2,7 +2,7 @@
 #define LOVEPRINT_JADE_WINDOW_H
 
 // jade
-#include "JadeElement.h"
+#include "Panel.h"
 
 
 struct SDL_Window;
@@ -28,8 +28,10 @@ struct WindowState
 	}
 }; // WindowState
 
-class Window : public JadeElement
+class Window : public Panel
 {
+	ObjectMeta(loveprint::jade::Window, loveprint::jade::Panel);
+
 	SDL_Window * _handle;
 	graphics::Graphics * _graphics;
 	WindowState state;
@@ -40,6 +42,12 @@ public:
 
 	void setTitle(const char * title);
 	const char * getTitle() const;
+
+	virtual void setWidth(int32 value) override;
+	virtual void setHeight(int32 value) override;
+
+	virtual graphics::Color getBackground() const override;
+	virtual void setBackground(graphics::Color value) override;
 
 	void Show();
 	void Hide();

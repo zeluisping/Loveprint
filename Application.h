@@ -1,10 +1,12 @@
 #ifndef LOVEPRINT_APPLICATION_H
 #define LOVEPRINT_APPLICATION_H
 
+// std
 #include <vector>
 
 namespace loveprint
 {
+
 class Window;
 
 class Application final
@@ -18,7 +20,8 @@ public:
 
 	Application();
 	~Application();
-};
-}
+}; // Application
 
-#endif
+} // loveprint
+
+#endif // LOVEPRINT_APPLICATION_H

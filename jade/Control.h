@@ -26,28 +26,28 @@ enum HorizontalAlignment
 	HORZALIGN_RIGHT,
 	HORZALIGN_CENTER,
 	HORZALIGN_MAX_VALUE,
-};
+}; // HorizontalAlignment
 
 class Control : public JadeElement
 {
-	ObjectMeta(loveprint::jade::Control, loveprint::runtime::Object);
+	ObjectMeta(loveprint::jade::Control, loveprint::jade::JadeElement);
 
 	ObjectProperty(Control, VerticalAlignment, VerticalAlignment);
 	ObjectProperty(Control, HorizontalAlignment, HorizontalAlignment);
 	ObjectProperty(Control, Thickness, Margin);
 
-	Control * _parent;
+	JadeElement * _parent;
 
 public:
 	bool myvar;
 
-	inline Control * parent() const {
+	inline JadeElement * parent() const {
 		return _parent;
 	}
 
 	virtual void draw(graphics::Graphics & g) const;
 
-	Control();
+	Control(JadeElement * parent);
 	virtual ~Control();
 }; // Control
 

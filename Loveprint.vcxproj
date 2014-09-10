@@ -74,6 +74,7 @@
     <ClCompile Include="graphics\Graphics.cpp" />
     <ClCompile Include="jade\Control.cpp" />
     <ClCompile Include="jade\JadeElement.cpp" />
+    <ClCompile Include="jade\JadeHead.cpp" />
     <ClCompile Include="jade\Panel.cpp" />
     <ClCompile Include="runtime\Type.cpp" />
     <ClCompile Include="libraries\glm\detail\dummy.cpp" />
@@ -122,6 +123,7 @@
     <ClInclude Include="font\NullRasterizer.h" />
     <ClInclude Include="font\Rasterizer.h" />
     <ClInclude Include="jade\JadeElement.h" />
+    <ClInclude Include="jade\JadeHead.h" />
     <ClInclude Include="jade\Thickness.h" />
     <ClInclude Include="jade\Panel.h" />
     <ClInclude Include="runtime\Property.h" />

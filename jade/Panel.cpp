@@ -5,7 +5,10 @@ namespace loveprint
 namespace jade
 {
 
-Panel::Panel()
+ObjectUserPropertyBody(loveprint::jade::Panel, std::vector<loveprint::jade::Control *>, Children);
+
+Panel::Panel(JadeElement * parent)
+	: Control(parent)
 {
 }
 

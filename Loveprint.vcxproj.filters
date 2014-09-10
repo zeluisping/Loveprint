@@ -150,6 +150,9 @@
     <ClCompile Include="jade\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="jade\JadeHead.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libraries\devil32\include\IL\config.h">
@@ -966,6 +969,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="jade\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jade\JadeHead.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

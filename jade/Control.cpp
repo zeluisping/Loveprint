@@ -12,10 +12,11 @@ ObjectPropertyBody(Control, Thickness, Margin);
 void Control::draw(graphics::Graphics & g) const
 {
 	g.setColor(getBackground());
-	g.rectangle(graphics::DRAW_FILL, 0, 0, 0, 0);
+	g.rectangle(graphics::DRAW_FILL, 0, 0, getWidth(), getHeight());
 }
 
-Control::Control()
+Control::Control(JadeElement * parent)
+	: _parent(parent)
 {
 }
 
